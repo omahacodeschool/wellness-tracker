@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hwtracker</title>
+  <title>Wellness Tracker</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+  <nav>
+    <ul class="header-nav-ul">
+      <% if current_user %>
+        <li class="header-nav-link"><%= link_to "Home", root_path %></li>
+        <li class="header-nav-link"><%= link_to "Logout", :logout, method: :post %></li>
+      <% else %>
 
-<%= yield %>
+        <li class="header-nav-link"><%= link_to "Home", root_path %></li>
+        <li class="header-nav-link"><%= link_to "Login", :login %></li>
+
+      <% end %>
+    </ul>
+  </nav>
+
+  <div>
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
+
+
+  <%= yield %>
+
 
 </body>
 </html>
