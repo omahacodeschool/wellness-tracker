@@ -13,24 +13,41 @@
 
   <div class="field">
     <%= f.label :energy, "Energy Level" %><br />
-    <%= f.number_field :energy %>
+    <% for i in 1..10 %>
+      <%= f.label :energy, i, value: i %>
+      <%= f.radio_button :energy, i %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :happiness, "Sense of Happiness" %><br />
-    <%= f.number_field :happiness %>
+    <% for i in 1..10 %>
+      <%= f.label :happiness, i, value: i %>
+      <%= f.radio_button :happiness, i %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :productivity, "Sense of Productivity" %><br />
-    <%= f.number_field :productivity %>
+    <% for i in 1..10 %>
+      <%= f.label :productivity, i, value: i %>
+      <%= f.radio_button :productivity, i %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :fulfillment, "Sense of Fulfillment" %><br />
-    <%= f.number_field :fulfillment %>
+    <% for i in 1..10 %>
+      <%= f.label :fulfillment, i, value: i %>
+      <%= f.radio_button :fulfillment, i %>
+    <% end %>
   </div>
+  
   <div class="field">
     <%= f.label :day, "How was your day?" %><br />
-    <%= f.number_field :day %>
+    <% for i in 1..10 %>
+      <%= f.label :day, i, value: i %>
+      <%= f.radio_button :day, i %>
+    <% end %>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
