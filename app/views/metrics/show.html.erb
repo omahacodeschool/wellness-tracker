@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @metric.user_id %>
+</p>
+
+<p>
+  <b>Energy:</b>
+  <%= @metric.energy %>
+</p>
+
+<p>
+  <b>Happiness:</b>
+  <%= @metric.happiness %>
+</p>
+
+<p>
+  <b>Productivity:</b>
+  <%= @metric.productivity %>
+</p>
+
+<p>
+  <b>Fulfillment:</b>
+  <%= @metric.fulfillment %>
+</p>
+
+<p>
+  <b>Day:</b>
+  <%= @metric.day %>
+</p>
+
+
+<%= link_to 'Edit', edit_metric_path(@metric) %> |
+<%= link_to 'Back', metrics_path %>

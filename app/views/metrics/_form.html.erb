@@ -1,0 +1,37 @@
+<%= form_for(@metric) do |f| %>
+  <% if @metric.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@metric.errors.count, "error") %> prohibited this metric from being saved:</h2>
+
+      <ul>
+      <% @metric.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :energy, "Energy Level" %><br />
+    <%= f.number_field :energy %>
+  </div>
+  <div class="field">
+    <%= f.label :happiness, "Sense of Happiness" %><br />
+    <%= f.number_field :happiness %>
+  </div>
+  <div class="field">
+    <%= f.label :productivity, "Sense of Productivity" %><br />
+    <%= f.number_field :productivity %>
+  </div>
+  <div class="field">
+    <%= f.label :fulfillment, "Sense of Fulfillment" %><br />
+    <%= f.number_field :fulfillment %>
+  </div>
+  <div class="field">
+    <%= f.label :day, "How was your day?" %><br />
+    <%= f.number_field :day %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

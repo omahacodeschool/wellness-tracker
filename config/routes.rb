@@ -1,5 +1,11 @@
 Hwtracker::Application.routes.draw do
 
+  resources :events
+
+
+  resources :metrics
+
+
   root :to => 'pages#index'
   
   get 'signup' => 'users#new', as: 'signup'
