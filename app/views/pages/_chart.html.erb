@@ -8,6 +8,26 @@ Morris.Line({
   ],
   xkey: 'd',
   ykeys: ['a'],
-  labels: ['Wellness']
+  labels: ['Average'],
+  ymax: 5,
+  ymin: 1,
+  xLabelAngle: 0,
+  lineWidth: 10,
+  pointSize: 15,
+  smooth: false,
+  xLabelFormat: function (x) {
+                    var IndexToMonth = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+                    var month = IndexToMonth[ x.getMonth() ];
+                    var year = x.getFullYear();
+                    var day = x.getDate();
+                    return month + ' ' + day + ' ' + year;
+                },
+  dateFormat: function (x) {
+          var IndexToMonth = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+          var month = IndexToMonth[ new Date(x).getMonth() ];
+          var year = new Date(x).getFullYear();
+          var day = new Date(x).getDate();
+          return month + ' ' + day + ' ' + year;
+      },
 });
 </script>
