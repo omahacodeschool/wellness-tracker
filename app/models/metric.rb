@@ -15,4 +15,8 @@ class Metric < ActiveRecord::Base
     created_at.localtime.try(:strftime, "%a, %e %b %Y")
   end
   
+  def morrisdate
+    created_at.localtime.try(:strftime, "%Y-%m-%d")
+  end
+  
 end

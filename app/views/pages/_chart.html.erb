@@ -1,0 +1,13 @@
+<script>
+Morris.Line({
+  element: 'chart',
+  data: [
+  <% @user.metrics.each do |m| %>
+    { d: '<%= m.morrisdate %>', a: <%= m.average %>},
+  <% end %>
+  ],
+  xkey: 'd',
+  ykeys: ['a'],
+  labels: ['Wellness']
+});
+</script>
