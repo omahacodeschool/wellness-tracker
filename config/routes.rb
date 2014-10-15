@@ -6,8 +6,8 @@ Hwtracker::Application.routes.draw do
   
   get 'score' => 'metrics#new', as: 'score'
   post 'metrics' => 'metrics#create'
-  get 'metrics/:id/edit' => 'metrics#edit', as: 'edit_score'
-  put 'metrics/:id' => 'metrics#update'
+  get 'score/edit' => 'metrics#edit', as: 'edit_score'
+  put 'score/edit' => 'metrics#update'
   
   get 'event' => 'events#new', as: 'event'
   post 'events' => 'events#create'

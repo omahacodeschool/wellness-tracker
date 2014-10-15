@@ -1,4 +1,4 @@
-<%= form_for(@metric) do |f| %>
+<%= form_for(@metric,  url: edit_score_path) do |f| %>
   <% if @metric.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@metric.errors.count, "error") %> prohibited this metric from being saved:</h2>

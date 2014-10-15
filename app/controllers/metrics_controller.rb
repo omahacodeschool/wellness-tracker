@@ -25,6 +25,7 @@ class MetricsController < ApplicationController
   # GET /metrics/new
   # GET /metrics/new.json
   def new
+    @user = User.includes(:metrics).find_by_id(current_user.id)
     @metric = Metric.new
 
     respond_to do |format|
@@ -35,7 +36,8 @@ class MetricsController < ApplicationController
 
   # GET /metrics/1/edit
   def edit
-    @metric = Metric.find(params[:id])
+    @metric = Metric.today?.find_by_user_id(current_user.id)
+    
   end
 
   # POST /metrics
@@ -58,7 +60,7 @@ class MetricsController < ApplicationController
   # PUT /metrics/1
   # PUT /metrics/1.json
   def update
-    @metric = Metric.find(params[:id])
+    @metric = Metric.today?.find_by_user_id(current_user.id)
 
     respond_to do |format|
       if @metric.update_attributes(params[:metric])
