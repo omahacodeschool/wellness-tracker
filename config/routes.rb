@@ -12,7 +12,7 @@ Hwtracker::Application.routes.draw do
   get 'event' => 'events#new', as: 'event'
   post 'events' => 'events#create'
   get 'event/:id/edit' => 'events#edit', as: 'edit_event'
-  put 'events/:id' => 'events#update'
+  put 'event/:id/edit' => 'events#update'
   
   get 'signup' => 'users#new', as: 'signup'
   get 'login' => 'user_sessions#new', :as => :login

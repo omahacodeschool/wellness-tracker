@@ -1,26 +1,5 @@
 class MetricsController < ApplicationController
   
-  # GET /metrics
-  # GET /metrics.json
-  def index
-    @metrics = Metric.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @metrics }
-    end
-  end
-
-  # GET /metrics/1
-  # GET /metrics/1.json
-  def show
-    @metric = Metric.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @metric }
-    end
-  end
 
   # GET /metrics/new
   # GET /metrics/new.json
@@ -48,7 +27,7 @@ class MetricsController < ApplicationController
     respond_to do |format|
       if @metric.save
         @metric.update_attribute('user_id', current_user.id)
-        format.html { redirect_to @metric, notice: 'Metric was successfully created.' }
+        format.html { redirect_to report_path, notice: 'Metric was successfully created.' }
         format.json { render json: @metric, status: :created, location: @metric }
       else
         format.html { render action: "new" }
@@ -64,7 +43,7 @@ class MetricsController < ApplicationController
 
     respond_to do |format|
       if @metric.update_attributes(params[:metric])
-        format.html { redirect_to @metric, notice: 'Metric was successfully updated.' }
+        format.html { redirect_to report_path, notice: 'Metric was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
