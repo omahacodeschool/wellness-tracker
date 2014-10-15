@@ -11,6 +11,6 @@ class PagesController < ApplicationController
   
   def report
     @user = User.includes([:metrics, :events]).find_by_id(current_user.id)
-    
+
   end
 end

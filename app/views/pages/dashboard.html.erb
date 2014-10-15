@@ -1,2 +1,7 @@
-<%= link_to "Report", report_path %>
+<% if @user.metrics.today? == [] %>
+  <%= link_to "How was your day?", score_path %>
+<% else %>
+    <p><%= link_to "Report", report_path %></p>
+<% end %>
 
+<p><%= link_to 'Add Life Event' %></p>

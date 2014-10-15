@@ -1,7 +1,7 @@
 <div id="chart"></div>
 
 <% @user.metrics.each do |m| %>
-  <p>Average Wellness: <%= m.average %></p>
+  <p>Average Wellness for <%= m.prettydate %>: <%= m.average %></p>
 <% end %>
 
 <% @user.events.each do |e| %>

@@ -1,13 +1,18 @@
 Hwtracker::Application.routes.draw do
 
   root :to => 'pages#index'
-  
-  resources :events
-  resources :metrics
-  
   get 'dashboard' => 'pages#dashboard', as: 'dashboard'
-  
   get 'report' => 'pages#report', as: 'report'
+  
+  get 'score' => 'metrics#new', as: 'score'
+  post 'metrics' => 'metrics#create'
+  get 'metrics/:id/edit' => 'metrics#edit', as: 'edit_score'
+  put 'metrics/:id' => 'metrics#update'
+  
+  get 'event' => 'events#new', as: 'event'
+  post 'events' => 'events#create'
+  get 'event/:id/edit' => 'events#edit', as: 'edit_event'
+  put 'events/:id' => 'events#update'
   
   get 'signup' => 'users#new', as: 'signup'
   get 'login' => 'user_sessions#new', :as => :login
