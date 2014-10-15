@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   skip_before_filter :require_login, only: [:index, :new, :create]
 
+  # GET /profile
+  # Shows current user's profile page.
   def show
     @user = User.find_by_id(current_user.id)
 

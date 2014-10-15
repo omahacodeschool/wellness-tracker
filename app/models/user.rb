@@ -13,6 +13,6 @@ class User < ActiveRecord::Base
   
   accepts_nested_attributes_for :metrics, :allow_destroy => true, :reject_if => proc { |obj| obj.blank? }
   accepts_nested_attributes_for :events, :allow_destroy => true, :reject_if => proc { |obj| obj.blank? }
-  
+
   
 end

@@ -1,17 +1,18 @@
 Hwtracker::Application.routes.draw do
 
-  resources :events
-
-
-  resources :metrics
-
-
   root :to => 'pages#index'
+  
+  resources :events
+  resources :metrics
+  
+  get 'dashboard' => 'pages#dashboard', as: 'dashboard'
+  
+  get 'report' => 'pages#report', as: 'report'
   
   get 'signup' => 'users#new', as: 'signup'
   get 'login' => 'user_sessions#new', :as => :login
   
-  post '/user_sessions' => 'user_sessions#create', as: 'user_sessions'
+  post 'user_sessions' => 'user_sessions#create', as: 'user_sessions'
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
   get 'profile' => 'users#show', as: 'profile'

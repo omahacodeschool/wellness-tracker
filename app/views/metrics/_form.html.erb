@@ -13,28 +13,28 @@
 
   <div class="field">
     <%= f.label :energy, "Energy Level" %><br />
-    <% for i in 1..10 %>
+    <% for i in 1..5 %>
       <%= f.label :energy, i, value: i %>
       <%= f.radio_button :energy, i %>
     <% end %>
   </div>
   <div class="field">
     <%= f.label :happiness, "Sense of Happiness" %><br />
-    <% for i in 1..10 %>
+    <% for i in 1..5 %>
       <%= f.label :happiness, i, value: i %>
       <%= f.radio_button :happiness, i %>
     <% end %>
   </div>
   <div class="field">
     <%= f.label :productivity, "Sense of Productivity" %><br />
-    <% for i in 1..10 %>
+    <% for i in 1..5 %>
       <%= f.label :productivity, i, value: i %>
       <%= f.radio_button :productivity, i %>
     <% end %>
   </div>
   <div class="field">
     <%= f.label :fulfillment, "Sense of Fulfillment" %><br />
-    <% for i in 1..10 %>
+    <% for i in 1..5 %>
       <%= f.label :fulfillment, i, value: i %>
       <%= f.radio_button :fulfillment, i %>
     <% end %>
@@ -42,7 +42,7 @@
   
   <div class="field">
     <%= f.label :day, "How was your day?" %><br />
-    <% for i in 1..10 %>
+    <% for i in 1..5 %>
       <%= f.label :day, i, value: i %>
       <%= f.radio_button :day, i %>
     <% end %>

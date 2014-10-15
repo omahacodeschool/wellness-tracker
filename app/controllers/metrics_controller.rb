@@ -1,4 +1,5 @@
 class MetricsController < ApplicationController
+  
   # GET /metrics
   # GET /metrics.json
   def index
@@ -44,6 +45,7 @@ class MetricsController < ApplicationController
 
     respond_to do |format|
       if @metric.save
+        @metric.update_attribute('user_id', current_user.id)
         format.html { redirect_to @metric, notice: 'Metric was successfully created.' }
         format.json { render json: @metric, status: :created, location: @metric }
       else
