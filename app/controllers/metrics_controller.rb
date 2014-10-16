@@ -27,7 +27,7 @@ class MetricsController < ApplicationController
     respond_to do |format|
       if @metric.save
         @metric.update_attribute('user_id', current_user.id)
-        format.html { redirect_to report_path, notice: 'Metric was successfully created.' }
+        format.html { redirect_to dashboard_path, notice: 'Metric was successfully created.' }
         format.json { render json: @metric, status: :created, location: @metric }
       else
         format.html { render action: "new" }
@@ -43,7 +43,7 @@ class MetricsController < ApplicationController
 
     respond_to do |format|
       if @metric.update_attributes(params[:metric])
-        format.html { redirect_to report_path, notice: 'Metric was successfully updated.' }
+        format.html { redirect_to dashboard_path, notice: 'Metric was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
