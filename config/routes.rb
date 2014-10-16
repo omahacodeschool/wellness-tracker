@@ -21,6 +21,7 @@ Hwtracker::Application.routes.draw do
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
   get 'profile' => 'users#show', as: 'profile'
+  post 'profile' => 'users#create'
   get 'profile/edit' => 'users#edit', as: 'edit_profile'
   put 'profile' => 'users#update'
   delete 'profile' => 'users#destroy'
