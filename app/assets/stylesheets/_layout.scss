@@ -1,0 +1,20 @@
+.header-title {
+  margin: 0;
+  font-size: 40px;
+}
+
+.header-nav-ul {
+  @extend %fake_ul;
+  position: absolute;
+  right: 0;
+  top: 22px;
+}
+
+.header-nav-link {
+  margin: 3px;
+}
+
+#chart {
+  width: 400px;
+  height: 250px;
+}

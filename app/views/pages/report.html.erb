@@ -1,12 +1,3 @@
-<div id="chart" style="width: 400px; height: 250px"> </div>
-
-
-<% @user.metrics.each do |m| %>
-  <p>Average Wellness for <%= m.prettydate %>: <%= m.average %></p>
-<% end %>
-
-<% @user.events.each do |e| %>
-  <p>Event: <%= e.content %></p>
-<% end %>
+<div id="chart"> </div>
 
 <%= render 'chart' %>

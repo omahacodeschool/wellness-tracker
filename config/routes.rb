@@ -5,7 +5,7 @@ Hwtracker::Application.routes.draw do
   get 'report' => 'pages#report', as: 'report'
   
   get 'score' => 'metrics#new', as: 'score'
-  post 'metrics' => 'metrics#create'
+  post 'score/edit' => 'metrics#create'
   get 'score/edit' => 'metrics#edit', as: 'edit_score'
   put 'score/edit' => 'metrics#update'
   

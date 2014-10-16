@@ -2,7 +2,7 @@
 Morris.Line({
   element: 'chart',
   data: [
-  <% @user.metrics.each do |m| %>
+  <% @metrics.each do |m| %>
     { d: '<%= m.morrisdate %>', a: <%= m.average %>},
   <% end %>
   ],
@@ -29,5 +29,6 @@ Morris.Line({
     var day = new Date(x).getDate();
     return month + ' ' + day + ' ' + year;
   },
+  lineColors: ['#0A6B73']
 });
 </script>

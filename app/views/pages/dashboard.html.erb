@@ -1,7 +1,14 @@
 <% if @user.metrics.today? == [] %>
-  <%= link_to "How was your day?", score_path %>
+  <%= link_to "How was your day?", score_path, class: 'main-link' %>
 <% else %>
-    <p><%= link_to "Report", report_path %></p>
+    <div id="chart"> </div>
+
+    <%= render 'chart' %>
 <% end %>
 
-<p><%= link_to 'Add Life Event' %></p>
+<h3>Life Events</h3>
+<% @events.each do |e| %>
+  <p><%= e.prettydate %> - <%= e.content %></p>
+<% end %>
+
+<p><%= link_to 'Add Life Event', event_path, class: 'main-link' %></p>
