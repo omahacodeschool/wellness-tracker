@@ -1,16 +1,20 @@
 <% if @user.metrics.today? == [] %>
   <%= link_to "Score today's wellness!", score_path, class: 'main-link' %>
 <% else %>
-    <div id="chart"> </div>
-
-    <%= render 'chart' %>
+  <div id="chart"> </div>
+  <%= render 'chart' %>
 <% end %>
 
-<% if @events != [] %>
-  <h3>Life Events This Week</h3>
-  <% @events.each do |e| %>
-    <p><%= e.prettydate %> - <%= e.content %></p>
+<div class='events'>
+  <% if @events != [] %>
+    <h3>Life Events This Week</h3>
+    <ul class='event-ul'>
+      <% @events.each do |e| %>
+        <li class='event-li'><%= e.prettydate %> - <%= e.content %></li>
+      <% end %>
+    </ul>
   <% end %>
-<% end %>
 
-<p><%= link_to 'Add Life Event', event_path, class: 'main-link' %></p>
+  <p><%= link_to 'Add Life Event', event_path, class: 'add-event' %></p>
+
+</div>

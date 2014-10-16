@@ -1,3 +1,12 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.main-index {
+  text-align: center;
+}
+
 .header-title {
   margin: 0;
   font-size: 40px;
@@ -17,4 +26,45 @@
 #chart {
   width: 400px;
   height: 250px;
+}
+
+.main-link {
+  padding: 10px;
+}
+
+.signup-link {
+  @extend .main-link;
+  position: relative;
+  top: 10px;
+  padding: 10px 50px;
+}
+
+.flash {
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+input[type=text] {
+  @extend %inputs;
+}
+
+input[type=submit] {
+  @extend %inputs;
+  @extend %submit;
+}
+
+input[type=password] {
+  @extend %inputs;
+}
+
+.events {
+  padding: 20px;
+}
+
+.event-li {
+  position: relative;
+  list-style: none;
+  left: -30px;
+  margin: 10px 0px;
 }

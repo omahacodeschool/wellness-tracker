@@ -12,34 +12,38 @@
 </head>
 <body>
   
-  <header>
-    <h1 class="header-title">Wellness Tracker</h1>
-    <nav>
-      <ul class="header-nav-ul">
-        <% if current_user %>
-          <li class="header-nav-link"><%= link_to "Dashboard", dashboard_path %></li>
-          <li class="header-nav-link"><%= link_to "Profile", profile_path %></li>
-          <li class="header-nav-link"><%= link_to "Logout", :logout, method: :post %></li>
-        <% else %>
-          <li class="header-nav-link"><%= link_to "Home", root_path %></li>
-          <li class="header-nav-link"><%= link_to "Login", :login %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <div>
-      <p id="notice"><%= flash[:notice] %></p>
-      <p id="alert"><%= flash[:alert] %></p>
-    </div>
-    
-    <%= yield %>
-  </main>
+  <div class="container">
   
-  <footer>
+    <header>
+      <h1 class="header-title">Wellness Tracker</h1>
+      <nav>
+        <ul class="header-nav-ul">
+          <% if current_user %>
+            <li class="header-nav-link"><%= link_to "Dashboard", dashboard_path %></li>
+            <li class="header-nav-link"><%= link_to "Profile", profile_path %></li>
+            <li class="header-nav-link"><%= link_to "Logout", :logout, method: :post %></li>
+          <% else %>
+            <li class="header-nav-link"><%= link_to "Home", root_path %></li>
+            <li class="header-nav-link"><%= link_to "Login", :login %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="flash">
+        <p id="notice"><%= flash[:notice] %></p>
+        <p id="alert"><%= flash[:alert] %></p>
+      </div>
     
-  </footer>
+      <%= yield %>
+    </main>
+  
+    <footer>
+    
+    </footer>
+  
+  </div>
 
 </body>
 </html>

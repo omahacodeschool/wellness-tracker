@@ -1,3 +1,5 @@
-<% unless current_user %>
-  <%= link_to 'Sign Up!', signup_path %>
-<% end %>
+<div class="main-index">
+  <% unless current_user %>
+    <%= link_to 'Sign Up!', signup_path, class: 'signup-link' %>
+  <% end %>
+</div>

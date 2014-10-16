@@ -4,22 +4,27 @@
 
 body {
   background: $primary_bg;
-  margin: 0px;
-  
+  margin: 0;
+  width: 100%;
 }
 
 header {
   background: $header_bg;
 }
 
+h1 {
+  color: $header_color;
+  font-family: $serif_font;
+}
+
+h3 {
+  @extend h1;
+}
+
 .header-title {
   font-family: $fancy_font;
   color: $header_color;
   font-weight: 700;
-}
-
-.header-nav-ul {
-  
 }
 
 .header-nav-link a {
@@ -30,4 +35,45 @@ header {
 
 .header-nav-link a:hover {
   text-shadow: 0 0 5px white;
+}
+
+.main-link {
+  background: $metal;
+  color: white;
+  text-decoration: none;
+  font-family: $sans_font;
+}
+
+.main-link:hover {
+  background: $metal2;
+}
+
+.add-event {
+  @extend .main-link;
+  position: relative;
+  top: 10px;
+}
+
+.flash {
+  font-family: $sans_font;
+}
+
+#alert {
+  color: red;
+}
+
+#notice {
+  color: green;
+}
+
+input[type=submit] {
+  color: white;
+}
+
+input[type=submit]:hover {
+  background: $metal2;
+}
+
+label {
+  font-family: $sans-font;
 }
