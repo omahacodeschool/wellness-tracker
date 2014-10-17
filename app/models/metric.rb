@@ -6,6 +6,12 @@ class Metric < ActiveRecord::Base
   # Checks if a metric record has been added today.
   scope :today?, lambda { where(:created_at => Chronic.parse('today 0:00')..Chronic.parse('today 23:59')) }
   
+  validates :day, presence: true
+  validates :energy, presence: true
+  validates :fulfillment, presence: true
+  validates :happiness, presence: true
+  validates :productivity, presence: true
+  
   # Averages each of the wellness metrics.
   def average
     (energy + happiness + productivity + fulfillment + day)/5
