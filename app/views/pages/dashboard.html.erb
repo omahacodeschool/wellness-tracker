@@ -1,9 +1,10 @@
 <% if @user.metrics.today? == [] %>
-  <%= link_to "Score today's wellness!", score_path, class: 'main-link' %>
+  <div class='main-index'>
+    <%= link_to "Score today's wellness!", score_path, class: 'main-link' %>
+  </div>
 <% else %>
   <div id="chart"> </div>
   <%= render 'chart' %>
-<% end %>
 
 <div class='events'>
   <% if @events != [] %>
@@ -16,5 +17,5 @@
   <% end %>
 
   <p><%= link_to 'Add Life Event', event_path, class: 'add-event' %></p>
-
+  <% end %>
 </div>
