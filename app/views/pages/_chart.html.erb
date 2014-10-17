@@ -11,6 +11,7 @@ Morris.Line({
   labels: ['Average'],
   ymax: 5,
   ymin: 1,
+  resize: true,
   xLabelAngle: 0,
   lineWidth: 10,
   pointSize: 15,
@@ -29,6 +30,9 @@ Morris.Line({
     var day = new Date(x).getDate();
     return month + ' ' + day + ' ' + year;
   },
-  lineColors: ['#0A6B73']
+  lineColors: ['#0A6B73'],
+  events: <%= raw @mevents %>,
+  eventStrokeWidth: 3,
+  eventLineColors: ['#DEA2AB']
 });
 </script>

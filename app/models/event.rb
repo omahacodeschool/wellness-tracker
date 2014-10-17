@@ -8,12 +8,17 @@ class Event < ActiveRecord::Base
   
   # Formats created_at into a prettier date.
   def prettydate
-    created_at.localtime.try(:strftime, "%a, %e %b %Y")
+    created_at.localtime.try(:strftime, "%e %b %Y")
   end
   
   # Formats created_at into something morris.js likes more.
   def morrisdate
     created_at.localtime.try(:strftime, "%Y-%m-%d")
+  end
+  
+  # Turns Array into something morris.js likes for graphing events.
+  def self.etime(array)
+    array.map!{ |x| x.strftime('%Y-%m-%d') }
   end
   
 end

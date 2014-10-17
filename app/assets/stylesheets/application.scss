@@ -9,11 +9,11 @@ body {
 }
 
 header {
-  background: $header_bg;
+  background: $secondary_bg;
 }
 
 h1 {
-  color: $header_color;
+  color: $primary_color;
   font-family: $serif_font;
 }
 
@@ -23,13 +23,13 @@ h3 {
 
 .header-title {
   font-family: $fancy_font;
-  color: $header_color;
+  color: $primary_color;
   font-weight: 700;
 }
 
 .header-nav-link a {
   text-decoration: none;
-  color: $header_color;
+  color: $primary_color;
   font-family: $serif_font;
 }
 
@@ -38,14 +38,14 @@ h3 {
 }
 
 .main-link {
-  background: $metal;
+  background: $primary_color;
   color: white;
   text-decoration: none;
   font-family: $sans_font;
 }
 
 .main-link:hover {
-  background: $metal2;
+  background: $secondary_color;
 }
 
 .add-event {
@@ -66,14 +66,27 @@ h3 {
   color: green;
 }
 
+input[type=text] {
+  background: $input_bg;
+}
+
+input[type=password] {
+  background: $input_bg;
+}
+
 input[type=submit] {
   color: white;
+  background: $primary_color;
 }
 
 input[type=submit]:hover {
-  background: $metal2;
+  background: $secondary_color;
 }
 
 label {
+  font-family: $sans-font;
+}
+
+.event-li {
   font-family: $sans-font;
 }

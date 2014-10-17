@@ -8,6 +8,7 @@ class PagesController < ApplicationController
     @user = User.includes([:metrics, :events]).find_by_id(current_user.id)
     @metrics = @user.metrics.last(7)
     @events = @user.events.this_week
+    @mevents = Event.etime(@events.pluck(:created_at))
     
   end
   
